@@ -15,7 +15,7 @@ Fullstack Angular/NodeJs app with 80% test coverage. The user can upload a JPEG/
 
 ### Installation and execution
 
-Make sure you have a .env file at the root of **backend-upload** folder.
+Make sure you have a .env file at the root of **backend** folder.
 Set **DB_DB=main** to facilitate usage.
 A .env.example file is provided.
 It should be filled out with your app, RDS and S3 resource details like so:
@@ -51,29 +51,29 @@ Otherwise tests will be performed on the default environment and may tamper data
 ```
 NODE_ENV=test
 ```
-Next, move into the **upload-app** folder and run the following script which will, in order:
+Next, move into the **frontend** folder and run the following script which will, in order:
 * Install depedencies for both projects
 * Perform a clean of the RDS databse provided, then migrate and seed with dummy data for use in Q2
 * Run the backend and frontend concurrently
 ```sh
-$ cd ./upload-app
+$ cd ./frontend
 $ npm run fresh-start
 ```
 If you need to run the apps without reperforming a migration, use the 'dev' script
 ```sh
-$ cd ./upload-app
+$ cd ./frontend
 $ npm run dev
 ```
 It can take a while for the apps to start up; wait for the message that Angular has compiled in the terminal as that is usually the last action to happen.
 
 For tests, you can execute them seperately. For front-end:
 ```sh
-$ cd ./upload-app
+$ cd ./frontend
 $ npm run test
 ```
 or back-end:
 ```sh
-$ cd ./backend-upload
+$ cd ./backend
 $ npm run unit-tests
 ```
 The Sonar settings I used (**sonar-project.properties**) were as follows
